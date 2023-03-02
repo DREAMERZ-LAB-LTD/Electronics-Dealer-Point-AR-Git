@@ -1,0 +1,131 @@
+﻿#include "pch-c.h"
+#ifndef _MSC_VER
+# include <alloca.h>
+#else
+# include <malloc.h>
+#endif
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void cube_OnEnable_mA6B08365C82F5E18087D870E1901696E63C0CA82 (void);
+extern void cube_DisableImageManeger_mB2956575A6F82A753BC1FD7AF01E51A2BBD097B5 (void);
+extern void cube_Update_mCD8FC284A8423BE93292225A508AFF1E53E1074F (void);
+extern void cube__ctor_m45B6983DD69E0B93559A4CDAC3BAFEC2633A3BC7 (void);
+extern void AnchorCreator_get_AnchorPrefab_mBBAF7805E9D9F8D79408EE642D153BC76306B25A (void);
+extern void AnchorCreator_set_AnchorPrefab_m53CC9CC3022C713826B44536B48B462C8A1FACFF (void);
+extern void AnchorCreator_RemoveAllAnchors_m6BA302DD9EECA47969FD3F6E5397441DCB09ED21 (void);
+extern void AnchorCreator_Awake_m8820A3F157354D7EDED7B2D7CE2BFA42844F1F8E (void);
+extern void AnchorCreator_Update_mA0A8BCCBAB0AE50DB087524E6273D11F1D6456D0 (void);
+extern void AnchorCreator__ctor_m702B01425680D7FD1C9272A423AAF8A913E5476E (void);
+extern void AnchorCreator__cctor_mDE519BED5D639DA8CD4FA7E389C3D97DF4BA54C4 (void);
+extern void ARFeatheredPlaneMeshVisualizer_get_featheringWidth_m14D3A8BE3E9A745E6FD525B19ADDC892B8399B4D (void);
+extern void ARFeatheredPlaneMeshVisualizer_set_featheringWidth_mD616A09A3B426EA5DE1FA37334DD194E43EEC110 (void);
+extern void ARFeatheredPlaneMeshVisualizer_Awake_mC5DB0414A2514BF4851266C25141C903F0AC57BA (void);
+extern void ARFeatheredPlaneMeshVisualizer_OnEnable_m8781C85CFED871C8A81A5B88DB1031856E0FC9F0 (void);
+extern void ARFeatheredPlaneMeshVisualizer_OnDisable_m2343B05B1A8F14BAD4DD516C584281B66FE6A4E8 (void);
+extern void ARFeatheredPlaneMeshVisualizer_ARPlane_boundaryUpdated_mB3D9BBD14EA1FE3ECDBACC2DB89C1B110B8B6B5F (void);
+extern void ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69CD8C7C8CCE56209AB321FEF5 (void);
+extern void ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6 (void);
+extern void ARFeatheredPlaneMeshVisualizer__cctor_m56285A000EE27A1631BE9C5BCDA5C376E5D133C3 (void);
+extern void ImageRec_Awake_m565A26A6919A0F3A0AF734B4337BED2467764EFA (void);
+extern void ImageRec_OnEnable_mF8F1F354F7B8C6AEA36182CF7373CB472ECF5564 (void);
+extern void ImageRec_OnDisable_m39B62836AE0361C38FF19E6A49FEEE9AD64B4FAA (void);
+extern void ImageRec_OnImageChange_m5F170690DD07ED58AAD28FA4A010C51E25208529 (void);
+extern void ImageRec__ctor_m89736AE200AE209B521952FA012161877DD27A6F (void);
+extern void LoadScene_LoadSceneCall_mF08F3508C231376262795A7D071680604D26EB8A (void);
+extern void LoadScene__ctor_m560E29BD726E67BB4572A9B8098DD97BEFFF63DD (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_IsEditorOnly_m59E10A16B0BDEA496377805E39C3D90B1E2C4815 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes_Get_mDAD527916A4779DB4ACAFEADC3BA7372671FA647 (void);
+extern void UnitySourceGeneratedAssemblyMonoScriptTypes__ctor_mE2C680837D47039E3F06032AA8C63FEDB7E783A5 (void);
+static Il2CppMethodPointer s_methodPointers[30] = 
+{
+	cube_OnEnable_mA6B08365C82F5E18087D870E1901696E63C0CA82,
+	cube_DisableImageManeger_mB2956575A6F82A753BC1FD7AF01E51A2BBD097B5,
+	cube_Update_mCD8FC284A8423BE93292225A508AFF1E53E1074F,
+	cube__ctor_m45B6983DD69E0B93559A4CDAC3BAFEC2633A3BC7,
+	AnchorCreator_get_AnchorPrefab_mBBAF7805E9D9F8D79408EE642D153BC76306B25A,
+	AnchorCreator_set_AnchorPrefab_m53CC9CC3022C713826B44536B48B462C8A1FACFF,
+	AnchorCreator_RemoveAllAnchors_m6BA302DD9EECA47969FD3F6E5397441DCB09ED21,
+	AnchorCreator_Awake_m8820A3F157354D7EDED7B2D7CE2BFA42844F1F8E,
+	AnchorCreator_Update_mA0A8BCCBAB0AE50DB087524E6273D11F1D6456D0,
+	AnchorCreator__ctor_m702B01425680D7FD1C9272A423AAF8A913E5476E,
+	AnchorCreator__cctor_mDE519BED5D639DA8CD4FA7E389C3D97DF4BA54C4,
+	ARFeatheredPlaneMeshVisualizer_get_featheringWidth_m14D3A8BE3E9A745E6FD525B19ADDC892B8399B4D,
+	ARFeatheredPlaneMeshVisualizer_set_featheringWidth_mD616A09A3B426EA5DE1FA37334DD194E43EEC110,
+	ARFeatheredPlaneMeshVisualizer_Awake_mC5DB0414A2514BF4851266C25141C903F0AC57BA,
+	ARFeatheredPlaneMeshVisualizer_OnEnable_m8781C85CFED871C8A81A5B88DB1031856E0FC9F0,
+	ARFeatheredPlaneMeshVisualizer_OnDisable_m2343B05B1A8F14BAD4DD516C584281B66FE6A4E8,
+	ARFeatheredPlaneMeshVisualizer_ARPlane_boundaryUpdated_mB3D9BBD14EA1FE3ECDBACC2DB89C1B110B8B6B5F,
+	ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69CD8C7C8CCE56209AB321FEF5,
+	ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6,
+	ARFeatheredPlaneMeshVisualizer__cctor_m56285A000EE27A1631BE9C5BCDA5C376E5D133C3,
+	ImageRec_Awake_m565A26A6919A0F3A0AF734B4337BED2467764EFA,
+	ImageRec_OnEnable_mF8F1F354F7B8C6AEA36182CF7373CB472ECF5564,
+	ImageRec_OnDisable_m39B62836AE0361C38FF19E6A49FEEE9AD64B4FAA,
+	ImageRec_OnImageChange_m5F170690DD07ED58AAD28FA4A010C51E25208529,
+	ImageRec__ctor_m89736AE200AE209B521952FA012161877DD27A6F,
+	LoadScene_LoadSceneCall_mF08F3508C231376262795A7D071680604D26EB8A,
+	LoadScene__ctor_m560E29BD726E67BB4572A9B8098DD97BEFFF63DD,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_IsEditorOnly_m59E10A16B0BDEA496377805E39C3D90B1E2C4815,
+	UnitySourceGeneratedAssemblyMonoScriptTypes_Get_mDAD527916A4779DB4ACAFEADC3BA7372671FA647,
+	UnitySourceGeneratedAssemblyMonoScriptTypes__ctor_mE2C680837D47039E3F06032AA8C63FEDB7E783A5,
+};
+static const int32_t s_InvokerIndices[30] = 
+{
+	6508,
+	6508,
+	6508,
+	6508,
+	6406,
+	5071,
+	6508,
+	6508,
+	6508,
+	6508,
+	9985,
+	6450,
+	5105,
+	6508,
+	6508,
+	6508,
+	4938,
+	5071,
+	6508,
+	9985,
+	6508,
+	6508,
+	6508,
+	4949,
+	6508,
+	5031,
+	6508,
+	9906,
+	9941,
+	6508,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	30,
+	s_methodPointers,
+	0,
+	NULL,
+	s_InvokerIndices,
+	0,
+	NULL,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};
