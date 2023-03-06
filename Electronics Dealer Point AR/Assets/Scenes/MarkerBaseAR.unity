@@ -175,8 +175,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
-  far clip plane: 20
+  near clip plane: 0.01
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_SerializedLibrary: {fileID: 11400000, guid: 8965e8f297e8d4098ac0aaee626245b9,
     type: 2}
   m_MaxNumberOfMovingImages: 2
-  m_TrackedImagePrefab: {fileID: 4297869421114486805, guid: fe573e7abb8af466791f07600c0785e3,
+  m_TrackedImagePrefab: {fileID: 2577559234669370972, guid: 0b86453faed624a52bd6888d81f1e299,
     type: 3}
 --- !u!114 &388525034
 MonoBehaviour:
@@ -479,6 +479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -563,6 +564,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &884438133
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +747,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

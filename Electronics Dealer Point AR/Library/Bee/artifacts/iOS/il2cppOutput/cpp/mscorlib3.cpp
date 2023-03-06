@@ -629,60 +629,60 @@ struct Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F
 		#pragma pack(push, tp, 1)
 		struct
 		{
-			int32_t ___flags_5;
+			int32_t ___flags_8;
 		};
 		#pragma pack(pop, tp)
 		struct
 		{
-			int32_t ___flags_5_forAlignmentOnly;
+			int32_t ___flags_8_forAlignmentOnly;
 		};
 		#pragma pack(push, tp, 1)
 		struct
 		{
-			char ___hi_6_OffsetPadding[4];
-			int32_t ___hi_6;
+			char ___hi_9_OffsetPadding[4];
+			int32_t ___hi_9;
 		};
 		#pragma pack(pop, tp)
 		struct
 		{
-			char ___hi_6_OffsetPadding_forAlignmentOnly[4];
-			int32_t ___hi_6_forAlignmentOnly;
+			char ___hi_9_OffsetPadding_forAlignmentOnly[4];
+			int32_t ___hi_9_forAlignmentOnly;
 		};
 		#pragma pack(push, tp, 1)
 		struct
 		{
-			char ___lo_7_OffsetPadding[8];
-			int32_t ___lo_7;
+			char ___lo_10_OffsetPadding[8];
+			int32_t ___lo_10;
 		};
 		#pragma pack(pop, tp)
 		struct
 		{
-			char ___lo_7_OffsetPadding_forAlignmentOnly[8];
-			int32_t ___lo_7_forAlignmentOnly;
+			char ___lo_10_OffsetPadding_forAlignmentOnly[8];
+			int32_t ___lo_10_forAlignmentOnly;
 		};
 		#pragma pack(push, tp, 1)
 		struct
 		{
-			char ___mid_8_OffsetPadding[12];
-			int32_t ___mid_8;
+			char ___mid_11_OffsetPadding[12];
+			int32_t ___mid_11;
 		};
 		#pragma pack(pop, tp)
 		struct
 		{
-			char ___mid_8_OffsetPadding_forAlignmentOnly[12];
-			int32_t ___mid_8_forAlignmentOnly;
+			char ___mid_11_OffsetPadding_forAlignmentOnly[12];
+			int32_t ___mid_11_forAlignmentOnly;
 		};
 		#pragma pack(push, tp, 1)
 		struct
 		{
-			char ___ulomidLE_9_OffsetPadding[8];
-			uint64_t ___ulomidLE_9;
+			char ___ulomidLE_12_OffsetPadding[8];
+			uint64_t ___ulomidLE_12;
 		};
 		#pragma pack(pop, tp)
 		struct
 		{
-			char ___ulomidLE_9_OffsetPadding_forAlignmentOnly[8];
-			uint64_t ___ulomidLE_9_forAlignmentOnly;
+			char ___ulomidLE_12_OffsetPadding_forAlignmentOnly[8];
+			uint64_t ___ulomidLE_12_forAlignmentOnly;
 		};
 	};
 };
@@ -1218,11 +1218,11 @@ struct DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D_StaticFields
 };
 struct Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F_StaticFields
 {
-	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___Zero_0;
-	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___One_1;
-	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___MinusOne_2;
-	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___MaxValue_3;
-	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___MinValue_4;
+	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___Zero_3;
+	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___One_4;
+	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___MinusOne_5;
+	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___MaxValue_6;
+	Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F ___MinValue_7;
 };
 struct Guid_t_StaticFields
 {
@@ -6845,6 +6845,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Math_Sign_mC342EFA64DCA2E65BCF71F1206
 		return ((int32_t)((int64_t)(((int64_t)(L_0>>((int32_t)63)))|((int64_t)((uint64_t)((-L_1))>>((int32_t)63))))));
 	}
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Truncate_mE66B1AD68C17D27675DE0CB74643374F9EDB649C (double ___0_d, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		double L_0 = ___0_d;
+		il2cpp_codegen_runtime_class_init_inline(Math_tEB65DE7CA8B083C412C969C92981C030865486CE_il2cpp_TypeInfo_var);
+		double L_1;
+		L_1 = Math_ModF_m0F96CE4FC43C89BECCE17B6EFB51B01D39BD0EBB(L_0, (double*)((uintptr_t)(&___0_d)), NULL);
+		double L_2 = ___0_d;
+		return L_2;
+	}
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Abs_mB51A855474C02CE2D68C41DA19230632910A3883 (double ___0_value, const RuntimeMethod* method) 
 {
 	return fabs(___0_value);
@@ -6856,6 +6873,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Math_Abs_m9AC832833620E36FDADACC7664F43
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Acos_mF08CED1B5D17698A5E0CE0818239197CE779C11A (double ___0_d, const RuntimeMethod* method) 
 {
 	return acos(___0_d);
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Asin_m82DDD74A21E242DCC8F6809EBBCE8F0F710A80F4 (double ___0_d, const RuntimeMethod* method) 
+{
+	return asin(___0_d);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double Math_Atan_m653A85096EA3E38D6B5998337232B82A3548EAC7 (double ___0_d, const RuntimeMethod* method) 
 {
@@ -28727,21 +28748,21 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* MissingMemberException_
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR uint32_t Decimal_get_Mid_mEE06DEE2D89FDD11819D89AD0FF8639866A51788_inline (Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F* __this, const RuntimeMethod* method) 
 {
 	{
-		int32_t L_0 = __this->___mid_8;
+		int32_t L_0 = __this->___mid_11;
 		return L_0;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR uint32_t Decimal_get_High_m86BC909DA3D43FC917C408DCACE5FFB0D73DB4DC_inline (Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F* __this, const RuntimeMethod* method) 
 {
 	{
-		int32_t L_0 = __this->___hi_6;
+		int32_t L_0 = __this->___hi_9;
 		return L_0;
 	}
 }
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR uint32_t Decimal_get_Low_m8B0C535B60CF68D2E41E29F35949F4989D41799C_inline (Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F* __this, const RuntimeMethod* method) 
 {
 	{
-		int32_t L_0 = __this->___lo_7;
+		int32_t L_0 = __this->___lo_10;
 		return L_0;
 	}
 }

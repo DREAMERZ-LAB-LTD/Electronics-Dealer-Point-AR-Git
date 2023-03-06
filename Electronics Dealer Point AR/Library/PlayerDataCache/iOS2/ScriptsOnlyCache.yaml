@@ -3,9 +3,15 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - ARFeatheredPlaneMeshVisualizer
     - AnchorCreator
+    - DitectionChange
     - ImageRec
     - LoadScene
-    - cube
+    - MoveableObjectSystemTouch
+    - ObjectRotator
+    - Operations
+    - SingleTouchSystem
+    DOTween.dll:
+    - DG.Tweening.Core.DOTweenSettings
     SuperEditor.dll:
     - CGHBNFMMNFMFJNOPDHLEBKJFABAGBPBNAALK.DHCMBBFIBPNKBPOLMKAPMMIDOECODHBOGOGO
     Unity.InputSystem.dll:
@@ -15,8 +21,21 @@ ScriptsOnlyBuild:
     - UnityEngine.InputSystem.XR.TrackedPoseDriver
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
+    Unity.XR.ARCore.Editor.dll:
+    - UnityEditor.XR.ARCore.ARCoreSettings
     Unity.XR.ARFoundation.dll:
-    - UnityEngine.XR.ARFoundation.ARAnchor
     - UnityEngine.XR.ARFoundation.ARAnchorManager
     - UnityEngine.XR.ARFoundation.ARCameraBackground
     - UnityEngine.XR.ARFoundation.ARCameraManager
@@ -44,8 +63,12 @@ ScriptsOnlyBuild:
     - UnityEditor.XR.OpenXR.OpenXRPackageSettings
     Unity.XR.OpenXR.Features.ConformanceAutomation.dll:
     - UnityEngine.XR.OpenXR.Features.ConformanceAutomation.ConformanceAutomationFeature
+    Unity.XR.OpenXR.Features.MetaQuestSupport.dll:
+    - UnityEngine.XR.OpenXR.Features.MetaQuestSupport.MetaQuestFeature
     Unity.XR.OpenXR.Features.MockRuntime.dll:
     - UnityEngine.XR.OpenXR.Features.Mock.MockRuntime
+    Unity.XR.OpenXR.Features.OculusQuestSupport.dll:
+    - UnityEngine.XR.OpenXR.Features.OculusQuestSupport.OculusQuestFeature
     Unity.XR.OpenXR.Features.RuntimeDebugger.dll:
     - UnityEngine.XR.OpenXR.Features.RuntimeDebugger.RuntimeDebuggerOpenXRFeature
     Unity.XR.OpenXR.dll:
@@ -79,16 +102,47 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
     UnityEngine.XR.MagicLeap.dll:
     - UnityEngine.XR.MagicLeap.MagicLeapSettings
   serializedClasses:
+    DOTween:
+    - DG.Tweening.Core.DOTweenSettings/ModulesSetup
+    - DG.Tweening.Core.DOTweenSettings/SafeModeOptions
     Unity.InputSystem:
     - UnityEngine.InputSystem.InputAction
     - UnityEngine.InputSystem.InputActionProperty
     - UnityEngine.InputSystem.InputBinding
+    Unity.TextMeshPro:
+    - TMPro.FaceInfo_Legacy
+    - TMPro.FontAssetCreationSettings
+    - TMPro.KerningTable
+    - TMPro.TMP_Character
+    - TMPro.TMP_FontFeatureTable
+    - TMPro.TMP_FontWeightPair
+    - TMPro.TMP_GlyphAdjustmentRecord
+    - TMPro.TMP_GlyphPairAdjustmentRecord
+    - TMPro.TMP_GlyphValueRecord
+    - TMPro.TMP_InputField/OnChangeEvent
+    - TMPro.TMP_InputField/SelectionEvent
+    - TMPro.TMP_InputField/SubmitEvent
+    - TMPro.TMP_InputField/TextSelectionEvent
+    - TMPro.TMP_InputField/TouchScreenKeyboardEvent
+    - TMPro.TMP_Sprite
+    - TMPro.TMP_SpriteCharacter
+    - TMPro.TMP_SpriteGlyph
+    - TMPro.TMP_Style
+    - TMPro.VertexGradient
     Unity.XR.ARSubsystems:
     - UnityEngine.XR.ARSubsystems.SerializableDictionary`2[System.String,System.Byte[]]
     - UnityEngine.XR.ARSubsystems.SerializableGuid
@@ -97,6 +151,12 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
+    - UnityEngine.RectOffset
+    UnityEngine.TextCoreFontEngineModule:
+    - UnityEngine.TextCore.FaceInfo
+    - UnityEngine.TextCore.Glyph
+    - UnityEngine.TextCore.GlyphMetrics
+    - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
@@ -104,22 +164,54 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.SpriteState
     UnityEngine.XR.MagicLeap:
     - UnityEngine.XR.MagicLeap.MagicLeapSettings/GLCache
   methodsToPreserve:
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Operations
+    methodName: Open3DViewScene
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: Operations
+    methodName: Open3DViewScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Operations
+    methodName: Open3DViewScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Operations
+    methodName: Open3DViewScene
   - assembly: Assembly-CSharp
     fullTypeName: LoadScene
     methodName: LoadSceneCall
   - assembly: Assembly-CSharp
-    fullTypeName: LoadScene
-    methodName: LoadSceneCall
+    fullTypeName: DitectionChange
+    methodName: ChageDetictionModeToHorizontal
   - assembly: Assembly-CSharp
     fullTypeName: LoadScene
     methodName: LoadSceneCall
   - assembly: Assembly-CSharp
-    fullTypeName: LoadScene
-    methodName: LoadSceneCall
+    fullTypeName: DitectionChange
+    methodName: ChageDetictionModeToVirtical
   sceneClasses:
     Assets/Scenes/MarkerBaseAR.unity:
     - Class: 1
@@ -142,6 +234,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -149,57 +243,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1608}
+      Script: {instanceID: 1634}
     - Class: 114
-      Script: {instanceID: 1644}
+      Script: {instanceID: 1670}
     - Class: 114
-      Script: {instanceID: 1758}
+      Script: {instanceID: 1784}
     - Class: 114
-      Script: {instanceID: 3138}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3420}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 3810}
+      Script: {instanceID: 3836}
     - Class: 114
-      Script: {instanceID: 4062}
+      Script: {instanceID: 4088}
     - Class: 114
-      Script: {instanceID: 4356}
+      Script: {instanceID: 4382}
     - Class: 114
-      Script: {instanceID: 4614}
+      Script: {instanceID: 4640}
     - Class: 114
-      Script: {instanceID: 4702}
+      Script: {instanceID: 4728}
     - Class: 114
-      Script: {instanceID: 4820}
+      Script: {instanceID: 4846}
     - Class: 114
-      Script: {instanceID: 4854}
+      Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 5514}
+      Script: {instanceID: 5540}
     - Class: 114
-      Script: {instanceID: 5784}
+      Script: {instanceID: 5984}
     - Class: 114
-      Script: {instanceID: 5958}
+      Script: {instanceID: 7092}
     - Class: 114
-      Script: {instanceID: 7066}
+      Script: {instanceID: 7520}
     - Class: 114
-      Script: {instanceID: 7494}
+      Script: {instanceID: 7562}
     - Class: 114
-      Script: {instanceID: 7536}
+      Script: {instanceID: 8210}
     - Class: 114
-      Script: {instanceID: 8184}
+      Script: {instanceID: 8672}
     - Class: 114
-      Script: {instanceID: 8646}
+      Script: {instanceID: 8674}
     - Class: 114
-      Script: {instanceID: 8742}
+      Script: {instanceID: 8912}
     - Class: 114
-      Script: {instanceID: 8884}
+      Script: {instanceID: 8982}
     - Class: 114
-      Script: {instanceID: 8954}
+      Script: {instanceID: 10336}
     - Class: 114
-      Script: {instanceID: 10308}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10498}
-    - Class: 114
-      Script: {instanceID: 28422}
+      Script: {instanceID: 70332}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -241,6 +333,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
@@ -250,51 +344,57 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1608}
+      Script: {instanceID: 1634}
     - Class: 114
-      Script: {instanceID: 1644}
+      Script: {instanceID: 1670}
     - Class: 114
-      Script: {instanceID: 1758}
+      Script: {instanceID: 1784}
     - Class: 114
-      Script: {instanceID: 3138}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 3420}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 3810}
+      Script: {instanceID: 3836}
     - Class: 114
-      Script: {instanceID: 4062}
+      Script: {instanceID: 4088}
     - Class: 114
-      Script: {instanceID: 4614}
+      Script: {instanceID: 4640}
     - Class: 114
-      Script: {instanceID: 4702}
+      Script: {instanceID: 4728}
     - Class: 114
-      Script: {instanceID: 4820}
+      Script: {instanceID: 4846}
     - Class: 114
-      Script: {instanceID: 4854}
+      Script: {instanceID: 4880}
     - Class: 114
-      Script: {instanceID: 5784}
+      Script: {instanceID: 7092}
     - Class: 114
-      Script: {instanceID: 7066}
+      Script: {instanceID: 7520}
     - Class: 114
-      Script: {instanceID: 7494}
+      Script: {instanceID: 7562}
     - Class: 114
-      Script: {instanceID: 7536}
+      Script: {instanceID: 8210}
     - Class: 114
-      Script: {instanceID: 8184}
+      Script: {instanceID: 8672}
     - Class: 114
-      Script: {instanceID: 8646}
+      Script: {instanceID: 8674}
     - Class: 114
-      Script: {instanceID: 8742}
+      Script: {instanceID: 8982}
     - Class: 114
-      Script: {instanceID: 8954}
+      Script: {instanceID: 10156}
     - Class: 114
-      Script: {instanceID: 10128}
+      Script: {instanceID: 10336}
     - Class: 114
-      Script: {instanceID: 10308}
+      Script: {instanceID: 10526}
     - Class: 114
-      Script: {instanceID: 10498}
+      Script: {instanceID: 10966}
     - Class: 114
-      Script: {instanceID: 28422}
+      Script: {instanceID: 32264}
+    - Class: 114
+      Script: {instanceID: 32764}
+    - Class: 114
+      Script: {instanceID: 45922}
+    - Class: 114
+      Script: {instanceID: 70332}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -311,7 +411,72 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/UI.unity:
+    Assets/UI/UI scene/3D Model view.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1670}
+    - Class: 114
+      Script: {instanceID: 3164}
+    - Class: 114
+      Script: {instanceID: 3446}
+    - Class: 114
+      Script: {instanceID: 3836}
+    - Class: 114
+      Script: {instanceID: 6726}
+    - Class: 114
+      Script: {instanceID: 7520}
+    - Class: 114
+      Script: {instanceID: 7732}
+    - Class: 114
+      Script: {instanceID: 8210}
+    - Class: 114
+      Script: {instanceID: 10962}
+    - Class: 114
+      Script: {instanceID: 10966}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/UI/UI scene/UI.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -324,6 +489,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
@@ -333,21 +500,49 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1644}
+      Script: {instanceID: 1670}
     - Class: 114
-      Script: {instanceID: 3138}
+      Script: {instanceID: 1834}
     - Class: 114
-      Script: {instanceID: 3420}
+      Script: {instanceID: 2546}
     - Class: 114
-      Script: {instanceID: 3810}
+      Script: {instanceID: 3164}
     - Class: 114
-      Script: {instanceID: 7066}
+      Script: {instanceID: 3446}
     - Class: 114
-      Script: {instanceID: 7494}
+      Script: {instanceID: 3836}
     - Class: 114
-      Script: {instanceID: 8184}
+      Script: {instanceID: 4094}
     - Class: 114
-      Script: {instanceID: 28422}
+      Script: {instanceID: 4966}
+    - Class: 114
+      Script: {instanceID: 5298}
+    - Class: 114
+      Script: {instanceID: 5318}
+    - Class: 114
+      Script: {instanceID: 5690}
+    - Class: 114
+      Script: {instanceID: 6442}
+    - Class: 114
+      Script: {instanceID: 6618}
+    - Class: 114
+      Script: {instanceID: 6726}
+    - Class: 114
+      Script: {instanceID: 7520}
+    - Class: 114
+      Script: {instanceID: 7732}
+    - Class: 114
+      Script: {instanceID: 8210}
+    - Class: 114
+      Script: {instanceID: 8224}
+    - Class: 114
+      Script: {instanceID: 8866}
+    - Class: 114
+      Script: {instanceID: 9830}
+    - Class: 114
+      Script: {instanceID: 10962}
+    - Class: 114
+      Script: {instanceID: 32536}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1435,6 +1630,12 @@ ScriptsOnlyBuild:
     className: ARPoseDriver
   - hash:
       serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LoadScene
+  - hash:
+      serializedVersion: 2
       Hash: 84834295544ef778fdcc2cc423a6cdb1
     assemblyName: Unity.XR.ARFoundation
     namespaceName: UnityEngine.XR.ARFoundation
@@ -1798,10 +1999,521 @@ ScriptsOnlyBuild:
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: LoadScene
+    className: Operations
+  - hash:
+      serializedVersion: 2
+      Hash: 2b225df4b5cb08a5be3d214a476c95c4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ObjectRotator
+  - hash:
+      serializedVersion: 2
+      Hash: e21bfe0e7cb94bb16f827252dfc65bcb
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MoveableObjectSystemTouch
+  - hash:
+      serializedVersion: 2
+      Hash: 29a38ed64d6189238642fda2875101f8
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenComponent
+  - hash:
+      serializedVersion: 2
+      Hash: cef9798948fddcca081b6c6392822bc2
+    assemblyName: DOTween.dll
+    namespaceName: DG.Tweening.Core
+    className: DOTweenSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ShowTest
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: IsOverUITest
+  - hash:
+      serializedVersion: 2
+      Hash: 46ef44b9dadd11c35a92dce17b282496
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ShowAssetPreviewTest
+  - hash:
+      serializedVersion: 2
+      Hash: 53a19a0034cdf04677770564a03986eb
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: InputAxisTest
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ShowNonSerializedFieldTest
+  - hash:
+      serializedVersion: 2
+      Hash: b5a5f8ea0ffdd30ae1a4135162f8200d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: VariableJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FPSDisplay
+  - hash:
+      serializedVersion: 2
+      Hash: f1e00e5b0f86d6f3ce3f0da76c3617d2
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: _TestScriptableObjectB
+  - hash:
+      serializedVersion: 2
+      Hash: 3bd856342d749df193d642eca9aa6dc8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ShootSystem
+  - hash:
+      serializedVersion: 2
+      Hash: e918aa86d51f455e57a12d857ab0e274
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TopDownJoystickController_DynamicCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 2ceb65f5f5bf7daa377debb184bd7ca5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlanetPlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 88c61743cb784fe6dd7f569765ecec8e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AutoShootSystem
+  - hash:
+      serializedVersion: 2
+      Hash: eab52bd963b2a0174193aed0333cf389
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: JoystickAngle
+  - hash:
+      serializedVersion: 2
+      Hash: 92e4eb637d90a10cbf7a27b5cc0a5f85
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: JoystickPlayerExample
+  - hash:
+      serializedVersion: 2
+      Hash: 60fceb8803dc277c5c604fd23b55ee76
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ReadOnlyTest
+  - hash:
+      serializedVersion: 2
+      Hash: 9457df3ce651b5fe1e5661bf81a04040
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlanetPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: 49b152462d9613a7793038292b82fb41
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ExpandableTest
+  - hash:
+      serializedVersion: 2
+      Hash: a57b67c2b5175149740cb316791e7ca3
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: LabelTest
+  - hash:
+      serializedVersion: 2
+      Hash: 46819664c11e7b63c30b8aad6b776b5d
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ValidateInputTest
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TriggerCallBackTest
+  - hash:
+      serializedVersion: 2
+      Hash: dd29f70d32721c433247782e348499fc
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SpnningObject
+  - hash:
+      serializedVersion: 2
+      Hash: 041da5cb7188a23bc753f4ccdfd6bad9
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DragObjectRotate
+  - hash:
+      serializedVersion: 2
+      Hash: ddbf32ea39bd66ceba267a2b0674b17a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FixedJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: 5ef2afb8f62b5765d9fca0e1d35ffb9b
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: MinMaxValueTest
+  - hash:
+      serializedVersion: 2
+      Hash: d1670a2039f7fb638b12e92a715a3557
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CurveRangeTest
+  - hash:
+      serializedVersion: 2
+      Hash: 777456845d5fd9f4270725fa6aa6f3b1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SingleTouchSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 8171bdbd5618d78e8a948e0d749332e8
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: _NaughtyScriptableObject
+  - hash:
+      serializedVersion: 2
+      Hash: ef6a0485d01b54e77212ca95e36d4ffa
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: EditorSceneScaleTool
+  - hash:
+      serializedVersion: 2
+      Hash: e1445e97b8940ee0d2295e2fe88fb8f7
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ButtonTest
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ShowNativePropertyTest
+  - hash:
+      serializedVersion: 2
+      Hash: 1dfe728dd8dd1853d9ed48a1fc8af890
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: LayerTest
+  - hash:
+      serializedVersion: 2
+      Hash: 1a120db841675631ebf96ba5d366628b
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ProgressBarTest
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WaitFor
+  - hash:
+      serializedVersion: 2
+      Hash: 676416e7ce12c049089b4e0dc902ed3c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ColorButtonHolder
+  - hash:
+      serializedVersion: 2
+      Hash: 1cc8eb2668baa292bffc6231064eb3a3
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: SceneTest
+  - hash:
+      serializedVersion: 2
+      Hash: 1a8e4be85eb1294178abbc2aa6aae91a
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: DropdownTest
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TriggerSystem
+  - hash:
+      serializedVersion: 2
+      Hash: c24e989e55840fca2745f9f79e5fb1c2
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BounchScript
+  - hash:
+      serializedVersion: 2
+      Hash: 1b29b153ffcf1795f63b201e790094bd
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: _TestScriptableObjectA
+  - hash:
+      serializedVersion: 2
+      Hash: b74817c4f092c3b32a726e47b084359b
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: BoxGroupTest
+  - hash:
+      serializedVersion: 2
+      Hash: 1605308c89369c737ec075633b81f9c2
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DestroyChildreanTest
+  - hash:
+      serializedVersion: 2
+      Hash: 8630f1c419768effa04f1bfabbd1e305
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WorldSpaceCircleUI
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CollisionSystem
+  - hash:
+      serializedVersion: 2
+      Hash: ddbf32ea39bd66ceba267a2b0674b17a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Joystick
+  - hash:
+      serializedVersion: 2
+      Hash: 98181b78ba5fac9ff5c947f3195ce623
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ReorderableListTest
+  - hash:
+      serializedVersion: 2
+      Hash: 873974938fae594e9d6968446748384c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FPS_Rotation
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WaitForSecTest
+  - hash:
+      serializedVersion: 2
+      Hash: ddbf32ea39bd66ceba267a2b0674b17a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FloatingJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: 2b89a577309ee23972c502ecef0aac43
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DynamicJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SingleTouchCallBackTest
+  - hash:
+      serializedVersion: 2
+      Hash: ad56f325adb10b95fee395893a1c4e25
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: InfinitySideMoveObject
+  - hash:
+      serializedVersion: 2
+      Hash: b74817c4f092c3b32a726e47b084359b
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: FoldoutTest
+  - hash:
+      serializedVersion: 2
+      Hash: 34c5563feb265b400b2dae5a68f08089
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: EnemyDetect
+  - hash:
+      serializedVersion: 2
+      Hash: 67ead19ee8cd4c21bee8431d4149aa5f
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: EnumFlagsTest
+  - hash:
+      serializedVersion: 2
+      Hash: 7bdde77e61f32380959da84a1b8427f8
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: TagTest
+  - hash:
+      serializedVersion: 2
+      Hash: f3f3be2b74a4ac4d5cb77cd80e380dcf
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: AnimatorParamTest
+  - hash:
+      serializedVersion: 2
+      Hash: 5e0050dc3ff4ce8a5bb4dec4b88b4e08
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WorldPositionFromUITest
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ObjectPooler
+  - hash:
+      serializedVersion: 2
+      Hash: e1c1fd84737047f060c94dc9b5189625
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ResizableTextAreaTest
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CollisionCallBackTest
+  - hash:
+      serializedVersion: 2
+      Hash: bb0fdbcecd59064bd8aa8e3becfb5387
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: HideIfTest
+  - hash:
+      serializedVersion: 2
+      Hash: 895d65cb641c99fa35c5a9bb512349f9
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: HorizontalLineTest
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TopDownAttackSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: _NaughtyComponent
+  - hash:
+      serializedVersion: 2
+      Hash: 82a22ef9751dd6b24266cb6f71c4773a
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: RequiredTest
+  - hash:
+      serializedVersion: 2
+      Hash: 34d5e02b50724954f06611e35954395e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TouchGunSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 6358f6cd894b24ef3f2914e56f80183b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PinchZoomSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 695ede14c95ec7c7eb8361c48ce5b7ac
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: InfoBoxTest
+  - hash:
+      serializedVersion: 2
+      Hash: 4fcf63a779903406bc45b3897734d480
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: JoystickSetterExample
+  - hash:
+      serializedVersion: 2
+      Hash: 18472dacd95a4121a61eadd78f992acb
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RunnerSideMove
+  - hash:
+      serializedVersion: 2
+      Hash: d64d2bc9d05764d0258b69f5ebb2e7e3
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TargetFrameRate
+  - hash:
+      serializedVersion: 2
+      Hash: 090c0fc257aa4835a7f48284c02f93d5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MeshDamager
+  - hash:
+      serializedVersion: 2
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RayCastHitSystem
+  - hash:
+      serializedVersion: 2
+      Hash: ec78165325d15fdc51d64e94910f9b2d
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: MinMaxSliderTest
+  - hash:
+      serializedVersion: 2
+      Hash: 04331b9c9ce99ea70e6d810b9c021420
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: DisableIfTest
+  - hash:
+      serializedVersion: 2
+      Hash: 0d3d981cc087e777bf3fa0d759b22533
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GetCameraTest
+  - hash:
+      serializedVersion: 2
+      Hash: a07c7af699e5c48460a06012dcb04263
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: EnableIfTest
+  - hash:
+      serializedVersion: 2
+      Hash: 7d66f70fce6b7431d941f6b91b700bce
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlanetGravity
+  - hash:
+      serializedVersion: 2
+      Hash: 2132c6bee860c956334def5580aa7479
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: ShowIfTest
+  - hash:
+      serializedVersion: 2
+      Hash: 86ac89d5a7b71c7d96794dbc464006d4
+    assemblyName: Assembly-CSharp
+    namespaceName: NaughtyAttributes.Test
+    className: OnValueChangedTest
+  - hash:
+      serializedVersion: 2
+      Hash: f8272d479ef4264eb31424d8ecc045ff
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DitectionChange
   platform: 9
   scenePathNames:
-  - Assets/Scenes/UI.unity
+  - Assets/UI/UI scene/UI.unity
+  - Assets/UI/UI scene/3D Model view.unity
   - Assets/Scenes/MarkerBaseAR.unity
   - Assets/Scenes/MarkerLessAR.unity
-  playerPath: /Users/dreamerzlab/Downloads/buidl
+  playerPath: /Users/dreamerzlab/Downloads/Build

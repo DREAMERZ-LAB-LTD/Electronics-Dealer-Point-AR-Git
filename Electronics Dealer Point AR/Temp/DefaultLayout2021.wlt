@@ -380,7 +380,7 @@ MonoBehaviour:
   m_LastFolders:
   - Packages/com.unity.learn.iet-framework.authoring
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/dreamerzlab/Downloads/Office/UnityProjects/Electronics Dealer Point AR - Git/Electronics-Dealer-Point-AR-Git/Electronics Dealer Point AR
+  m_LastProjectPath: /Users/dreamerzlab/Downloads/Office/UnityProjects/Electronics-Dealer-Point-AR-Git/Electronics Dealer Point AR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:

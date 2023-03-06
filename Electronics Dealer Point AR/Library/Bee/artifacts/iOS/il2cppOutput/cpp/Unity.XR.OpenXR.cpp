@@ -7857,7 +7857,7 @@ IL_004e:
 		Exception_t* L_14 = V_1;
 		NullCheck(L_14);
 		String_t* L_15;
-		L_15 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_14);
+		L_15 = VirtualFuncInvoker0< String_t* >::Invoke(10, L_14);
 		String_t* L_16 = L_15;
 		if (L_16)
 		{
@@ -7883,7 +7883,7 @@ IL_0069:
 		Exception_t* L_18 = V_1;
 		NullCheck(L_18);
 		String_t* L_19;
-		L_19 = VirtualFuncInvoker0< String_t* >::Invoke(8, L_18);
+		L_19 = VirtualFuncInvoker0< String_t* >::Invoke(9, L_18);
 		String_t* L_20;
 		L_20 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(_stringLiteral00B28FF06B788B9B67C6B259800F404F9F3761FD, L_19, NULL);
 		DiagnosticReport_AddSectionEntry_m87CBEF82999C76E863A5F607F98750BBC546C994(L_17, _stringLiteral66F97747B2609F5F9C0F9E822D0939B6316AB822, L_20, NULL);
