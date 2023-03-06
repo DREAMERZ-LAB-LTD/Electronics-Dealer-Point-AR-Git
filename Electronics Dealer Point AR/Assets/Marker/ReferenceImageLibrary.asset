@@ -23,10 +23,10 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 8396933294317210349
       m_GuidHigh: 16953053015315672602
-    m_Size: {x: 0.94375, y: 1}
+    m_Size: {x: 0.15, y: 0.1589404}
     m_SpecifySize: 1
     m_Name: IMG_0729
-    m_Texture: {fileID: 0}
+    m_Texture: {fileID: 2800000, guid: a26d8aede65774871a6e4174e55745eb, type: 3}
   - m_SerializedGuid:
       m_GuidLow: 4808056328124605302
       m_GuidHigh: 11545164770349281181

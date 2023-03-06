@@ -176,6 +176,18 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: Operations
     methodName: Open3DViewScene
@@ -197,21 +209,60 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Operations
     methodName: Open3DViewScene
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: Operations
     methodName: Open3DViewScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Operations
+    methodName: Open3DViewScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Operations
+    methodName: Open3DViewScene
+  - assembly: Assembly-CSharp
+    fullTypeName: Operations
+    methodName: Open3DViewScene
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LoadScene
+    methodName: LoadSceneCall
   - assembly: Assembly-CSharp
     fullTypeName: LoadScene
     methodName: LoadSceneCall
   - assembly: Assembly-CSharp
     fullTypeName: DitectionChange
     methodName: ChageDetictionModeToHorizontal
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: DitectionChange
+    methodName: ChageDetictionModeToHorizontal
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: LoadScene
     methodName: LoadSceneCall
   - assembly: Assembly-CSharp
     fullTypeName: DitectionChange
     methodName: ChageDetictionModeToVirtical
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: DitectionChange
+    methodName: ChageDetictionModeToVirtical
+  - assembly: Assembly-CSharp
+    fullTypeName: LoadScene
+    methodName: LoadSceneCall
   sceneClasses:
     Assets/Scenes/MarkerBaseAR.unity:
     - Class: 1
@@ -271,11 +322,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5984}
     - Class: 114
+      Script: {instanceID: 6726}
+    - Class: 114
       Script: {instanceID: 7092}
     - Class: 114
       Script: {instanceID: 7520}
     - Class: 114
       Script: {instanceID: 7562}
+    - Class: 114
+      Script: {instanceID: 7732}
     - Class: 114
       Script: {instanceID: 8210}
     - Class: 114
@@ -366,11 +421,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4880}
     - Class: 114
+      Script: {instanceID: 6726}
+    - Class: 114
       Script: {instanceID: 7092}
     - Class: 114
       Script: {instanceID: 7520}
     - Class: 114
       Script: {instanceID: 7562}
+    - Class: 114
+      Script: {instanceID: 7732}
     - Class: 114
       Script: {instanceID: 8210}
     - Class: 114

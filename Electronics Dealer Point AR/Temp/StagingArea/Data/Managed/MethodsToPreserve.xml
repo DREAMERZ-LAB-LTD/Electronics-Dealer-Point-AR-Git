@@ -2,9 +2,13 @@
 	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
 		<type fullname="DitectionChange">
 			<method name="ChageDetictionModeToHorizontal"/>
+			<method name="ChageDetictionModeToHorizontal"/>
+			<method name="ChageDetictionModeToVirtical"/>
 			<method name="ChageDetictionModeToVirtical"/>
 		</type>
 		<type fullname="LoadScene">
+			<method name="LoadSceneCall"/>
+			<method name="LoadSceneCall"/>
 			<method name="LoadSceneCall"/>
 			<method name="LoadSceneCall"/>
 		</type>
@@ -13,10 +17,23 @@
 			<method name="Open3DViewScene"/>
 			<method name="Open3DViewScene"/>
 			<method name="Open3DViewScene"/>
+			<method name="Open3DViewScene"/>
+			<method name="Open3DViewScene"/>
+			<method name="Open3DViewScene"/>
 		</type>
 	</assembly>
 	<assembly fullname="UnityEngine.CoreModule" ignoreIfMissing="1">
 		<type fullname="UnityEngine.GameObject">
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
 			<method name="SetActive"/>
 			<method name="SetActive"/>
 			<method name="SetActive"/>

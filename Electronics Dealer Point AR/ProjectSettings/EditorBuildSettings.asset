@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: e86b007b9edc5499b88edcaad94315f2
   - enabled: 1
     path: Assets/UI/UI scene/UI.unity
-    guid: fbaaf8732a3cd432fafe8ba27c9a9d3f
+    guid: d1ee8b94d865043aa8b7996ad0d8396f
   - enabled: 1
     path: Assets/UI/UI scene/3D Model view.unity
     guid: d756a13b80a03eb40a809c571cc5d101
