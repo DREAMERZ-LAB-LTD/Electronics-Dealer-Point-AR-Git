@@ -126,6 +126,9 @@
 -define:UNITY_XR_ARKIT_LOADER_ENABLED
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"/Applications/Unity/Hub/Editor/2022.2.8f1/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
+-r:"/Applications/Unity/Hub/Editor/2022.2.8f1/PlaybackEngines/AndroidPlayer/Unity.Android.GradleProject.dll"
+-r:"/Applications/Unity/Hub/Editor/2022.2.8f1/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
 -r:"/Applications/Unity/Hub/Editor/2022.2.8f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 -r:"/Applications/Unity/Hub/Editor/2022.2.8f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 -r:"/Applications/Unity/Hub/Editor/2022.2.8f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.CoreModule.dll"
@@ -400,8 +403,10 @@
 "Assets/ExampleAssets/Prefabs/cube.cs"
 "Assets/ExampleAssets/Scripts/AnchorCreator.cs"
 "Assets/ExampleAssets/Scripts/ARFeatheredPlaneMeshVisualizer.cs"
-"Assets/ImageRec.cs"
-"Assets/LoadScene.cs"
+"Assets/Scripts/ImageRec.cs"
+"Assets/Scripts/LoadScene.cs"
+"Assets/UI/Scripts/ObjectRotator.cs"
+"Assets/UI/Scripts/Operations.cs"
 -langversion:9.0
 
 /deterministic
